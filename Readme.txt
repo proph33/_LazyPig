@@ -110,4 +110,4 @@ New in 5.00
 New in 5.01
 -added auto mana buff remover (Intellect, Spirit, Wisdom).
 New in 6.0.6
-- updated tank detection for salv removal to use righteous fury for paladins and rockbiter for shamans (rockbiter untested)
+- updated tank detection for salv removal to use righteous fury for paladins (still trying to figure out rockbiter for shamans)
