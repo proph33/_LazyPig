@@ -109,3 +109,5 @@ New in 5.00
 - Brand New GUI made by mrmr thx bro
 New in 5.01
 -added auto mana buff remover (Intellect, Spirit, Wisdom).
+New in 6.0.6
+- updated tank detection for salv removal to use righteous fury for paladins
