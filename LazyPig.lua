@@ -2292,6 +2292,21 @@ function LazyPig_IsShieldEquipped()
 	return false
 end
 
+function LazyPig_IsRighteousFuryActive()
+    local counter = 0
+    while GetPlayerBuff(counter) >= 0 do
+        local index = GetPlayerBuff(counter)
+        local texture = GetPlayerBuffTexture(index)
+        if texture then  -- Check if texture is not nil
+            if string.find(texture, "Spell_Holy_SealOfFury") then
+                return true
+            end
+        end
+        counter = counter + 1
+    end
+    return false
+end
+
 function LazyPig_CancelShapeshiftBuff()
 	local i;
 	local max = GetNumShapeshiftForms();
@@ -2357,7 +2372,12 @@ end
 
 
 function LazyPig_CheckSalvation()
-	if(LPCONFIG.SALVA == 1 or LPCONFIG.SALVA == 2 and (LazyPig_IsShieldEquipped() and LazyPig_PlayerClass("Warrior", "player") or LazyPig_IsBearForm())) then
+	if(LPCONFIG.SALVA == 1 or (
+	    LPCONFIG.SALVA == 2 and (
+		    (LazyPig_IsShieldEquipped() and LazyPig_PlayerClass("Warrior", "player")) or 
+	        LazyPig_IsBearForm() or 
+	        LazyPig_IsRighteousFuryActive()))
+	) then
 		LazyPig_CancelSalvationBuff()
 	end
 end
