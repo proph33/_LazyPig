@@ -168,7 +168,7 @@ local LazyPigMenuStrings = {
 		[55]= "Block BG Quest Sharing",
 		
 		[60]= "Always",
-		[61]= "Warrior Shield/Druid Bear",
+		[61]= "Tank Detection",
 		[62] = "Remove Wis/Int/Spirit",
 		[63] = "Remove Aspect of the Wolf",
 		
