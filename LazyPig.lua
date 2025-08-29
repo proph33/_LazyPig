@@ -2292,13 +2292,13 @@ function LazyPig_IsShieldEquipped()
 	return false
 end
 
-function LazyPig_IsRighteousFuryActive()
+function LazyPig_IsTankBuffActive()
     local counter = 0
     while GetPlayerBuff(counter) >= 0 do
         local index = GetPlayerBuff(counter)
         local texture = GetPlayerBuffTexture(index)
         if texture then  -- Check if texture is not nil
-            if string.find(texture, "Spell_Holy_SealOfFury") then
+            if string.find(texture, "Spell_Holy_SealOfFury") or string.find(texture, "Spell_Nature_Rockbiter") then
                 return true
             end
         end
@@ -2376,7 +2376,7 @@ function LazyPig_CheckSalvation()
 	    LPCONFIG.SALVA == 2 and (
 		    (LazyPig_IsShieldEquipped() and LazyPig_PlayerClass("Warrior", "player")) or 
 	        LazyPig_IsBearForm() or 
-	        LazyPig_IsRighteousFuryActive()))
+	        LazyPig_IsTankBuffActive()))
 	) then
 		LazyPig_CancelSalvationBuff()
 	end
