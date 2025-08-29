@@ -2298,7 +2298,7 @@ function LazyPig_IsTankBuffActive()
         local index = GetPlayerBuff(counter)
         local texture = GetPlayerBuffTexture(index)
         if texture then  -- Check if texture is not nil
-            if string.find(texture, "Spell_Holy_SealOfFury") or string.find(texture, "Spell_Nature_Rockbiter") then
+            if string.find(texture, "Spell_Holy_SealOfFury") then
                 return true
             end
         end
